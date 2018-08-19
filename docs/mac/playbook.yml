@@ -1,0 +1,37 @@
+- name: bootstrap
+  hosts: control
+
+  tasks:
+    - name: install cli apps with homebrew
+      homebrew:
+        name:
+          - wget
+          - htop
+          - aria2
+          - imagemagick
+          - go
+          - rclone
+          - youtube-dl
+          - sshfs
+        state: present
+    - name: install GUI apps with homebrew // no become
+      homebrew_cask:
+        name:
+          - boxer
+          - calibre
+          - chromium
+          - firefox
+          - freeze
+          - iina
+          - jiggler
+          - macvim
+          - osxfuse
+          - skype
+          - slack
+          - sublime-text
+          - tower
+          - tunnelblick
+          - telegram
+          - transmission
+          - vmware-fusion
+        state: present

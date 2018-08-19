@@ -1,0 +1,204 @@
+become: yes---
+- name: bootstrap
+  hosts: control 
+ 
+  # vars_prompt: 
+  #   - name: "githubuser" 
+  #     prompt: "Enter your github username" 
+  #     private: no 
+  #   - name: "githubpassword" 
+  #     prompt: "Enter your github password" 
+  #     private: yes
+
+  tasks:
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
+      become: yes
+    - name: install zsh
+      become: yes
+      block:
+        - pacman:
+            name: 
+              - curl
+              - wget
+              - git
+              - zsh
+        - command: chsh -s /usr/bin/zsh
+          become_user: user
+    - name: create aur_builder user
+      become: yes
+      block:
+        - user:
+            name: aur_builder
+            group: wheel
+        - lineinfile:
+            path: /etc/sudoers.d/11-install-aur_builder
+            line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+            create: yes
+            validate: 'visudo -cf %s'
+    - name: install fonts
+      become: yes
+      pacman:
+        name:
+          - terminus-font
+          - ttf-liberation
+          - ttf-dejavu
+          - ttf-bitstream-vera
+          - ttf-freefont
+          - ttf-hack
+          - ttf-anonymous-pro
+          - ttf-droid
+          - ttf-fira-mono
+          - ttf-fira-sans
+          - ttf-font-awesome
+          - ttf-roboto
+          - ttf-ubuntu-font-family
+          - opendesktop-fonts
+          - ttf-hanazono
+        state: present
+    - name: install cli apps
+      block: 
+        - pacman:
+            name:
+              - rsync
+              - rclone
+              - imagemagick
+              - alsa-utils
+              - ranger
+              - docker
+              - docker-compose
+              - docker-machine
+              - go
+              # - mutt
+              # - xterm
+              # - tmux
+              # - neovim 
+            state: present
+        - aur: name=yaourt skip_installed=true
+          become: yes
+          become_user: aur_builder
+    - name: install gui apps
+      become: yes
+      block:
+        - pacman:
+            name:
+              - chromium
+              - telegram-desktop
+              - vlc
+              - keepassxc
+              - yakuake
+              - latte-dock
+            state: present
+        - aur:
+            name:
+              - sublime-text-dev
+              - gitahead
+            skip_installed: yes
+          become: yes
+          become_user: aur_builder
+    - name: install xorg
+      become: yes
+      pacman:
+        name:
+          - mesa
+          - xorg-server
+          - xorg-xinit
+          - xorg-xrandr
+          - xorg-xbacklight
+    - name: install de
+      become: yes
+      pacman:
+        name:
+          - plasma
+          - kde-applications
+    - name: install themes
+      become: yes
+      pacman:
+        name:
+          - arc-kde
+          - kvantum-theme-arc
+          - papirus-icon-theme
+    - name: install vmware
+      become: yes
+      block:
+        - pacman:
+            name:
+              - fuse2
+              - gtkmm
+              - linux-headers
+              - libcanberra
+              - pcsclite
+            state: present
+        # - command: gpg --recv-keys 702353E0F7E48EDB
+        #   become_user: user
+        - aur:
+            name:
+              - ncurses5-compat-libs
+            skip_installed: yes
+            skip_pgp_check: yes
+          become_user: aur_builder
+      tags:
+         - vmware
+
+          # - xf86-input-vmmouse
+          # - xf86-video-vmware
+          
+
+      # become: yes
+          # - thunderbird
+    # - name: link configs 
+    #   file:
+    #     src: /home/user/dev/arch/config/{{ item }}
+    #     dest: /home/user/.config/{{ item }}
+    #     state: link
+    #   with_items:
+    #     - i3
+    #     - alacritty
+    #     - nvim
+
+
+    # - name: link xorg configs
+    #   file:
+    #     src: /home/user/dev/arch/config/{{ item }}
+    #     dest: /home/user/{{ item }}
+    #     state: link
+    #   with_items:
+    #     - .xinitrc
+    #     - .Xresources
+    #     - .vimrc
+    #     - .tmux.conf
+    # - name: install window manager and desk env
+    #   become: yes
+    #   pacman:
+    #     name:
+    #       - i3
+    #       - dmenu
+    #       - feh
+    #       - nodejs
+    #       - npm
+    # - name: install i3-style
+    #   become: yes
+    #   npm:
+    #     name: i3-style
+    #     global: yes
+    # - name: config vim
+    #   block:
+    #     - file:
+    #         src: /home/user/dev/arch/config/{{ item }}
+    #         dest: /home/user/{{ item }}
+    #         state: link
+    #       with_items:
+    #         - .vimrc
+    #     - file:
+    #         path: /home/user/.vim/bundle
+    #         state: directory
+    #     - git:
+    #         repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    #         dest: /home/user/.vim/bundle/Vundle.vim
+    #     - expect:
+    #         command: nvim +PluginInstall +qall
+    #         timeout: 600
+    #         responses:
+    #           (?i)ENTER: ""
