@@ -1,0 +1,45 @@
+become: yes
+- name: bootstrap
+  hosts: control 
+
+  tasks:
+    - name: full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
+      become: yes
+    - name: install fonts
+      become: yes
+      pacman:
+        name:
+          - terminus-font
+          - ttf-liberation
+          - ttf-dejavu
+          - ttf-bitstream-vera
+        state: present
+    - name: install cli apps
+        - pacman:
+            name:
+              - htop
+              - rsync
+              - ranger
+            state: present
+    - name: install gui apps
+      become: yes
+      block:
+        - pacman:
+            name:
+              - chromium
+              - telegram-desktop
+              - vlc
+              - keepassxc
+            state: present
+    - name: install xorg
+      become: yes
+      pacman:
+        name:
+          - mesa
+          - xorg-server
+          - xorg-xinit
+          - xorg-xrandr
+          - xorg-xbacklight
