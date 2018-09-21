@@ -1,0 +1,56 @@
+- name: bootstrap
+  hosts: control
+  vars:
+    mas_installed_apps:
+      - { id: 443987910, name: "1Password (6.8.9)" }
+      - { id: 747648890, name: "Telegram (4.3.4)" }
+      - { id: 904280696, name: "Things 3 (3.6.2)" }
+      - { id: 803453959, name: "Slack (3.3.2)" }
+      - { id: 880001334, name: "Reeder (3.2)" }
+      - { id: 409789998, name: "Twitter (4.3.2)" }
+      - { id: 1091189122, name: "Bear (1.6.1)" }
+  roles:
+    - geerlingguy.mas
+  tasks:
+    - name: install runtime langs
+      homebrew:
+        name:
+          - python3
+          - go
+    - name: install cli apps
+      homebrew:
+        name:
+          - wget
+          - htop
+          - aria2
+          - imagemagick
+          - rclone
+          - youtube-dl
+          # - sshfs
+        state: present
+    - name: install GUI apps
+      homebrew_cask:
+        name:
+          - boxer
+          - calibre
+          - chromium
+          - firefox
+          - freeze
+          - iina
+          - jiggler
+          - macvim
+          - github
+          - skype
+          - sublime-text
+          - tower
+          - tunnelblick
+          - transmission
+          - vmware-fusion
+          - cyberduck
+          # - osxfuse
+        state: present
+    - name: install jetbrains IDEs
+      homebrew_cask:
+        name:
+          - pycharm
+          - goland    
