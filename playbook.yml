@@ -26,7 +26,6 @@
           - imagemagick
           - rclone
           - youtube-dl
-          # - sshfs
         state: present
     - name: install GUI apps
       homebrew_cask:
@@ -34,6 +33,7 @@
           - boxer
           - calibre
           - chromium
+          - google-chrome
           - firefox
           - freeze
           - iina
@@ -48,10 +48,17 @@
           - vmware-fusion
           - cyberduck
           - whatsapp
-          # - osxfuse
         state: present
     - name: install jetbrains IDEs
       homebrew_cask:
         name:
           - pycharm
           - goland    
+    - name: install osxfuse and sshfs
+      block:
+        - homebrew_cask: 
+            name:
+              - osxfuse
+        - homebrew:
+            name: 
+              - sshfs
