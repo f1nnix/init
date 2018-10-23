@@ -9,6 +9,7 @@
       - { id: 880001334, name: "Reeder (3.2)" }
       - { id: 409789998, name: "Twitter (4.3.2)" }
       - { id: 1091189122, name: "Bear (1.6.1)" }
+      - { id: 1265763895, name: "VK Messenger (3.10.1)" }
   roles:
     - geerlingguy.mas
   tasks:
@@ -48,13 +49,16 @@
           - vmware-fusion
           - cyberduck
           - whatsapp
+          - telegram-desktop
+          - launchrocket
+          - teamviewer
         state: present
     - name: install jetbrains IDEs
       homebrew_cask:
         name:
           - pycharm
           - goland    
-    - name: install osxfuse and sshfs
+    - name: install fuse
       block:
         - homebrew_cask: 
             name:
@@ -62,3 +66,9 @@
         - homebrew:
             name: 
               - sshfs
+              - ext4fuse
+    - name: install pentest tools
+      block:
+        - homebrew_cask: 
+            name:
+              - burp-suite
