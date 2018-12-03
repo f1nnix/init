@@ -4,6 +4,7 @@
     mas_installed_apps:
       - { id: 443987910, name: "1Password (6.8.9)" }
       - { id: 747648890, name: "Telegram (4.3.4)" }
+      - { id: 946399090, name: "Telegram Desktop" }
       - { id: 904280696, name: "Things 3 (3.6.2)" }
       - { id: 803453959, name: "Slack (3.3.2)" }
       - { id: 880001334, name: "Reeder (3.2)" }
@@ -16,7 +17,7 @@
     - name: install runtime langs
       homebrew:
         name:
-          - python3
+          # - python3 # python 3.5.6_1 is needed for ansible
           - go
     - name: install cli apps
       homebrew:
@@ -31,7 +32,6 @@
     - name: install GUI apps
       homebrew_cask:
         name:
-          - boxer
           - calibre
           - chromium
           - google-chrome
@@ -43,30 +43,31 @@
           - github
           - skype
           - sublime-text
-          - tower
           - tunnelblick
           - transmission
           - vmware-fusion
-          - cyberduck
           - whatsapp
-          - telegram-desktop
-          - launchrocket
           - teamviewer
+          - vlc
+          # - tower
+          # - boxer
+          # - launchrocket
+          # - cyberduck
         state: present
     - name: install jetbrains IDEs
       homebrew_cask:
         name:
           - pycharm
           - goland    
-    - name: install fuse
-      block:
-        - homebrew_cask: 
-            name:
-              - osxfuse
-        - homebrew:
-            name: 
-              - sshfs
-              - ext4fuse
+    # - name: install fuse
+    #   block:
+    #     - homebrew_cask: 
+    #         name:
+    #           - osxfuse
+    #     - homebrew:
+    #         name: 
+    #           - sshfs
+    #           - ext4fuse
     - name: install pentest tools
       block:
         - homebrew_cask: 
