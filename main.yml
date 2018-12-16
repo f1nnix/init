@@ -15,11 +15,16 @@
   roles:
     - geerlingguy.mas
   tasks:
-    - name: install runtime langs
+    - name: install dev apps
       homebrew:
         name:
           # - python3 # python 3.5.6_1 is needed for ansible
           - go
+          - postgresql
+          - mysql
+          - redis
+          - mongodb
+          - nginx
     - name: install cli apps
       homebrew:
         name:
@@ -30,6 +35,7 @@
           - rclone
           - youtube-dl
           - hugo
+          - gettext # from gnu tool for django mesages
         state: present
     - name: install GUI apps
       homebrew_cask:
@@ -51,6 +57,7 @@
           - whatsapp
           - teamviewer
           - vlc
+          # - nightowl
           # - tower
           # - boxer
           # - launchrocket
@@ -61,13 +68,11 @@
         name:
           - pycharm
           - goland
-    # - name: install fuse
-    #   block:
-    #     - homebrew_cask: 
-    #         name:
-    #           - osxfuse
+    - name: install fuse
+      homebrew_cask:
+        name: osxfuse
     #     - homebrew:
-    #         name: 
+    #         name:
     #           - sshfs
     #           - ext4fuse
     - name: install pentest tools
