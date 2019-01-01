@@ -13,4 +13,6 @@ curl https://init51.f1nn.com/mac/ansible.hosts > ansible.hosts
 sudo mv ansible.hosts /etc/ansible/hosts
 mkdir -p ~/tmp
 curl https://init51.f1nn.com/mac/main.yml > ~/tmp/main.yml
+# sing-in to App Store
+open -g -W /Applications/App\ Store.ap
 ansible-playbook ~/tmp/main.yml
