@@ -8,10 +8,9 @@ pip3 install ansible
 
 # ansible
 ansible-galaxy install geerlingguy.mas
-sudo mkdir /etc/ansible
+sudo mkdir =p /etc/ansible
 curl https://init51.f1nn.com/mac/ansible.hosts > ansible.hosts
 sudo mv ansible.hosts /etc/ansible/hosts
-mkdir ~/tmp
+mkdir -p ~/tmp
 curl https://init51.f1nn.com/mac/main.yml > ~/tmp/main.yml
 ansible-playbook ~/tmp/main.yml
-
