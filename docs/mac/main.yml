@@ -41,22 +41,22 @@
       homebrew_cask:
         name:
           - calibre
-          - chromium
           - google-chrome
-          - firefox
           - freeze
           - iina
           - jiggler
-          - macvim
-          - github
           - skype
           - sublime-text
           - tunnelblick
           - transmission
           - vmware-fusion
           - whatsapp
-          - teamviewer
           - vlc
+          # - chromium
+          # - macvim
+          # - github
+          # - firefox
+          # - teamviewer
           # - nightowl
           # - tower
           # - boxer
