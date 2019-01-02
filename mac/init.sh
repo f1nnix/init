@@ -8,11 +8,7 @@ pip3 install ansible
 
 # ansible
 ansible-galaxy install geerlingguy.mas
-sudo mkdir =p /etc/ansible
-curl https://init51.f1nn.com/mac/ansible.hosts > ansible.hosts
-sudo mv ansible.hosts /etc/ansible/hosts
-mkdir -p ~/tmp
-curl https://init51.f1nn.com/mac/main.yml > ~/tmp/main.yml
+sudo mkdir -p /etc/ansible
+sudo mv files/ansible.hosts /etc/ansible/hosts
 # sing-in to App Store
 open -g -W /Applications/App\ Store.app
-ansible-playbook ~/tmp/main.yml
