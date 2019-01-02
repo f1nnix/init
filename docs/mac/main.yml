@@ -16,7 +16,7 @@
     - geerlingguy.mas
   tasks:
     - name: Ensure custom Terminal profile is added
-      shell: open ~/tmp/profile.termimal
+      shell: open ~/tmp/profile.terminal
       # changed_when: false
       # when: "'JJG-Term' not in terminal_theme.stdout"
     - name: install dev apps
