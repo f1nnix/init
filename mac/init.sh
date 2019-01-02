@@ -6,9 +6,8 @@ brew install mas
 
 # ansible
 pip3 install ansible
-ansible-galaxy install geerlingguy.mas
 sudo mkdir -p /etc/ansible
-sudo mv mac/files/ansible.hosts /etc/ansible/hosts
+sudo cp mac/files/ansible.hosts /etc/ansible/hosts
 
 # sing-in to App Store
 open -g -W /Applications/App\ Store.app

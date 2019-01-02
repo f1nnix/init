@@ -27,3 +27,35 @@ homebrew_installed_packages:
   - youtube-dl
   - hugo
   - gettext # from gnu tool for django mesages
+
+homebrew_cask_apps:
+  # GUI apps
+  - calibre
+  - google-chrome
+  - freeze
+  - iina
+  - jiggler
+  - skype
+  - sublime-text
+  - tunnelblick
+  - transmission
+  - vmware-fusion
+  - whatsapp
+  - vlc
+  # - chromium
+  # - macvim
+  # - github
+  # - firefox
+  # - teamviewer
+  # - nightowl
+  # - tower
+  # - boxer
+  # - launchrocket
+  # - cyberduck
+  # jetbrains IDEs
+  - pycharm
+  - goland
+  # pentest tools
+  - burp-suite
+  # fuse
+  - osxfuse
