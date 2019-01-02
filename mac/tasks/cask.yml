@@ -1,0 +1,42 @@
+- name: install GUI apps
+  homebrew_cask:
+    name:
+      - calibre
+      - google-chrome
+      - freeze
+      - iina
+      - jiggler
+      - skype
+      - sublime-text
+      - tunnelblick
+      - transmission
+      - vmware-fusion
+      - whatsapp
+      - vlc
+      # - chromium
+      # - macvim
+      # - github
+      # - firefox
+      # - teamviewer
+      # - nightowl
+      # - tower
+      # - boxer
+      # - launchrocket
+      # - cyberduck
+    state: present
+- name: install jetbrains IDEs
+  homebrew_cask:
+    name:
+      - pycharm
+      - goland
+- name: install pentest tools
+  homebrew_cask:
+    name:
+      - burp-suite
+- name: install fuse
+  homebrew_cask:
+    name: osxfuse
+#     - homebrew:
+#         name:
+#           - sshfs
+#           - ext4fuse
