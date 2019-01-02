@@ -19,6 +19,13 @@
       shell: open ~/tmp/profile.terminal
       # changed_when: false
       # when: "'JJG-Term' not in terminal_theme.stdout"
+    - name: Ensure custom Terminal profile is set as default.
+      shell: "{{ item }}"
+      with_items:
+        - defaults write com.apple.terminal 'Default Window Settings' -string profile
+        - defaults write com.apple.terminal 'Startup Window Settings' -string profile
+      # changed_when: false
+      # when: "'JJG-Term' not in terminal_theme.stdout"
     - name: install dev apps
       homebrew:
         name:
