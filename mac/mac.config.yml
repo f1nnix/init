@@ -20,6 +20,7 @@ homebrew_installed_packages:
   - hugo
   - gettext # from gnu tool for django mesages
   - go
+  - nodejs
   - postgresql
   - mysql
   - redis
@@ -44,3 +45,10 @@ homebrew_cask_apps:
   - burp-suite
   - osxfuse
   - send-to-kindle
+
+composer_packages: []
+gem_packages: []
+pip_packages: []
+npm_packages:
+  - name: peerflix
+    state: present # present/absent/latest, default: present
