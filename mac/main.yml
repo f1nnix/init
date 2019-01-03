@@ -11,3 +11,5 @@
   tasks:
     - include_tasks: tasks/terminal.yml
       # when: configure_terminal
+    - include_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
