@@ -11,14 +11,6 @@ mas_installed_apps:
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
 
 homebrew_installed_packages:
-  # dev apps
-  - go
-  - postgresql
-  - mysql
-  - redis
-  - mongodb
-  - nginx
-  # cli apps
   - wget
   - htop
   - aria2
@@ -27,9 +19,14 @@ homebrew_installed_packages:
   - youtube-dl
   - hugo
   - gettext # from gnu tool for django mesages
+  - go
+  - postgresql
+  - mysql
+  - redis
+  - mongodb
+  - nginx
 
 homebrew_cask_apps:
-  # GUI apps
   - calibre
   - google-chrome
   - freeze
@@ -42,20 +39,8 @@ homebrew_cask_apps:
   - vmware-fusion
   - whatsapp
   - vlc
-  # - chromium
-  # - macvim
-  # - github
-  # - firefox
-  # - teamviewer
-  # - nightowl
-  # - tower
-  # - boxer
-  # - launchrocket
-  # - cyberduck
-  # jetbrains IDEs
   - pycharm
   - goland
-  # pentest tools
   - burp-suite
-  # fuse
   - osxfuse
+  - send-to-kindle
