@@ -1,5 +1,5 @@
 - name: bootstrap
-  hosts: control
+  hosts: all 
   roles:
     - role: geerlingguy.homebrew
       tags: ['homebrew']

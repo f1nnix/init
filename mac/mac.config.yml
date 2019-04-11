@@ -9,23 +9,26 @@ mas_installed_apps:
   - { id: 1091189122, name: "Bear (1.6.1)" }
   - { id: 1265763895, name: "VK Messenger (3.10.1)" }
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
+  - { id: 425424353, name: "The Unarchiver (4.0.0)" }
+  - { id: 1039633667, name: "Irvue (2.7)" }
+  - { id: 409201541, name: "Pages (8.0)" }
 
 homebrew_installed_packages:
   - wget
   - htop
-  - aria2
-  - imagemagick
   - rclone
   - youtube-dl
-  - hugo
   - gettext # from gnu tool for django mesages
-  - go
-  - nodejs
   - postgresql
-  - mysql
-  - redis
+  - go
+  - mariadb
   - mongodb
-  - nginx
+  - nodejs
+  # - hugo
+  # - aria2
+  # - imagemagick
+  # - redis
+  # - nginx
 
 homebrew_cask_apps:
   - calibre
@@ -39,16 +42,17 @@ homebrew_cask_apps:
   - transmission
   - vmware-fusion
   - whatsapp
-  - vlc
   - pycharm
   - goland
-  - burp-suite
   - osxfuse
   - send-to-kindle
+  - cyberduck
+  # - vlc
+  # - burp-suite
 
 composer_packages: []
 gem_packages: []
 pip_packages: []
-npm_packages:
-  - name: peerflix
-    state: present # present/absent/latest, default: present
+npm_packages: []
+  # - name: peerflix
+  #   state: present # present/absent/latest, default: present
