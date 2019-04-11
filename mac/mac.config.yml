@@ -9,7 +9,6 @@ mas_installed_apps:
   - { id: 1091189122, name: "Bear (1.6.1)" }
   - { id: 1265763895, name: "VK Messenger (3.10.1)" }
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
-  - { id: 425424353, name: "The Unarchiver (4.0.0)" }
   - { id: 1039633667, name: "Irvue (2.7)" }
   - { id: 409201541, name: "Pages (8.0)" }
 
