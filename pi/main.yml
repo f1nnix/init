@@ -1,0 +1,82 @@
+---
+- name: bootstrap
+  hosts: pi
+  tasks:
+    - name: Update and upgrade apt packages
+      become: true
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400
+     
+    - name: Install new packages
+      apt:
+        name:
+          - transmission-cli
+          - transmission-common
+          - transmission-daemon
+          - minidlna
+          - usbmount
+          - ranger
+          - wget
+          - htop
+          - vim
+        state: latest
+    
+    - name: Stop minidlna 
+      become: true
+      systemd:
+        name: minidlna
+        state: stopped
+
+    - name: Stop services
+      become: true
+      systemd:
+        name: "{{ item }}"
+        state: stopped
+      with_items:
+        - minidlna
+        - transmission-daemon
+
+    - name: Ensure group "medias" exists
+      become: true
+      group:
+        name: medias 
+        state: present
+
+    - name: Add users to common group
+      become: true
+      user:
+        name: "{{ item }}" 
+        groups: medias
+        append: yes
+      with_items:
+        - minidlna
+        - debian-transmission
+        - pi
+
+    - name: Add minidlna config
+      become: true
+      template: src=templates/minidlna.j2
+                dest=/etc/minidlna.conf
+                force=yes owner=root group=root mode=644
+
+    - name: Set media folder owner
+      become: true
+      command: chown -R root:medias "{{ minidlna_media_dir }}"
+    
+    - name: Set media folder permissions
+      become: true
+      command: chmod -R 664 "{{ minidlna_media_dir }}"
+
+    - name: Start services
+      become: true
+      systemd:
+        name: "{{ item }}"
+        state: started 
+      with_items:
+        - minidlna
+        # - transmission-daemon
+
+
+
