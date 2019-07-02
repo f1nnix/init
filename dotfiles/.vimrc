@@ -1,4 +1,4 @@
-set guifont=Menlo:h15
+set guifont=Menlo:h17
 set number
 set cursorline
 set clipboard=unnamed
@@ -46,6 +46,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'nightsense/snow'
 
 Plugin 'lepture/vim-jinja'
+
+Plugin 'dyng/ctrlsf.vim'
+
+Plugin 'maksimr/vim-jsbeautify'
+
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'mxw/vim-jsx'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
