@@ -1,4 +1,4 @@
-set guifont=Menlo:h17
+" set guifont=Menlo:h17
 set number
 set cursorline
 set clipboard=unnamed
@@ -31,11 +31,11 @@ Plugin 'rakr/vim-two-firewatch'
 
 Plugin 'Yggdroot/indentLine'
 
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'mhinz/vim-startify'
+" Plugin 'scrooloose/nerdtree'
+" 
+" Plugin 'kien/ctrlp.vim'
+" 
+" Plugin 'mhinz/vim-startify'
 
 Plugin 'davidhalter/jedi-vim' 
 
@@ -54,6 +54,9 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'mxw/vim-jsx'
+
+Plugin 'autozimu/LanguageClient-neovim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,19 +80,19 @@ set background=light " or light if you prefer the light version
 
 " let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" 
+" let NERDTreeIgnore = ['__pycache__', '.pytest_cache/', '.DS_Store']
 
-let NERDTreeIgnore = ['__pycache__', '.pytest_cache/', '.DS_Store']
-
-autocmd VimEnter *
-            \   if !argc()
-            \ |   Startify
-            \ |   NERDTree
-            \ |   wincmd w
-            \ | endif
+" autocmd VimEnter *
+"             \   if !argc()
+"             \ |   Startify
+"             \ |   NERDTree
+"             \ |   wincmd w
+"             \ | endif
 
 
 if bufwinnr(1)
@@ -99,3 +102,15 @@ if bufwinnr(1)
     map . 10<C-W>>
     map = 10<C-W>=
 endif
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['/Users/user/.venv/magplan/bin/pyls'],
+    \ }
+
+let g:python3_host_prog = '/Users/user/.venv/magplan/bin/python'
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+let g:LanguageClient_loggingFile = '/tmp/lc.log'
