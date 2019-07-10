@@ -5,6 +5,7 @@ mas_installed_apps:
   - { id: 1091189122, name: "Bear (1.6.1)" }
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
   - { id: 409201541, name: "Pages (8.0)" }
+  - { id: 409203825, name: "Numbers (6.1)" }
 
 homebrew_installed_packages:
   - wget
