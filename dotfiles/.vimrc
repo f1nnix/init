@@ -1,8 +1,10 @@
-set guifont=Menlo:h15
+set guifont=Menlo:h16
 set number
 set cursorline
 set clipboard=unnamed
 set nowrap
+
+set encoding=UTF-8
 
 filetype plugin indent on
 " show existing tab with 4 spaces width
@@ -11,7 +13,6 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
-
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -22,12 +23,7 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'morhetz/gruvbox'
-
-Plugin 'rakr/vim-two-firewatch'
+" let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim' Plugin 'morhetz/gruvbox' Plugin 'rakr/vim-two-firewatch'
 
 Plugin 'Yggdroot/indentLine'
 
@@ -57,6 +53,9 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'autozimu/LanguageClient-neovim'
 
+Plugin 'acarapetis/vim-colors-github'
+
+" Plugin 'ryanoasis/vim-devicons'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -107,10 +106,12 @@ endif
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/Users/user/.venv/magplan/bin/pyls'],
+    \ 'python': ['/Users/user/.venv/rmatics-back-admin/bin/python'],
     \ }
 
-let g:python3_host_prog = '/Users/user/.venv/magplan/bin/python'
+" let g:python3_host_prog = '/Users/user/.venv/magplan/bin/python'
+let g:python3_host_prog = '/Users/user/.venv/rmatics-back-admin/bin/python'
+
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 let g:LanguageClient_loggingFile = '/tmp/lc.log'

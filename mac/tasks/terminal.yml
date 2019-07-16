@@ -7,5 +7,4 @@
   with_items:
     - defaults write com.apple.terminal 'Default Window Settings' -string profile
     - defaults write com.apple.terminal 'Startup Window Settings' -string profile
-  # changed_when: false
-  # when: "'JJG-Term' not in terminal_theme.stdout"
+
