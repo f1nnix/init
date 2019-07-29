@@ -1,4 +1,4 @@
-" set guifont=Menlo:h17
+set guifont=Menlo:h15
 set number
 set cursorline
 set clipboard=unnamed
@@ -31,10 +31,10 @@ Plugin 'rakr/vim-two-firewatch'
 
 Plugin 'Yggdroot/indentLine'
 
-" Plugin 'scrooloose/nerdtree'
-" 
-" Plugin 'kien/ctrlp.vim'
-" 
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'kien/ctrlp.vim'
+
 " Plugin 'mhinz/vim-startify'
 
 Plugin 'davidhalter/jedi-vim' 
@@ -80,12 +80,12 @@ set background=light " or light if you prefer the light version
 
 " let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 
-" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-" 
-" let NERDTreeIgnore = ['__pycache__', '.pytest_cache/', '.DS_Store']
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let NERDTreeIgnore = ['__pycache__', '.pytest_cache/', '.DS_Store']
 
 " autocmd VimEnter *
 "             \   if !argc()
