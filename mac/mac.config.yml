@@ -5,6 +5,7 @@ mas_installed_apps:
   - { id: 1091189122, name: "Bear (1.6.1)" }
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
   - { id: 409201541, name: "Pages (8.0)" }
+  - { id: 409203825, name: "Numbers (6.1)" }
 
 homebrew_installed_packages:
   - wget
@@ -12,21 +13,18 @@ homebrew_installed_packages:
   - rclone
   - youtube-dl
   - postgresql
-  - go
   - mariadb
   - mongodb
   - nodejs
+  - nginx
+  - redis
+  - imagemagick
   # - hugo
-  # - aria2
-  # - imagemagick
-  # - redis
-  # - nginx
   # - gettext # from gnu tool for django mesages
 
 homebrew_cask_apps:
   - calibre
   - google-chrome
-  - freeze
   - jiggler
   - skype
   - sublime-text
@@ -38,10 +36,11 @@ homebrew_cask_apps:
   - tower
   - iterm2
   - macvim
+  - cyberduck
   # - burp-suite
   # - iina
-  # - cyberduck
   # - pycharm
+  # - freeze
   # - goland
   # - osxfuse
   # - send-to-kindle
