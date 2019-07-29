@@ -1,4 +1,5 @@
 set guifont=Menlo:h15
+set linespace=4
 set number
 set cursorline
 set clipboard=unnamed
