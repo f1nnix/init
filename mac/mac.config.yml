@@ -1,49 +1,60 @@
 mas_installed_apps:
-  - { id: 443987910, name: "1Password (6.8.9)" }
-  - { id: 747648890, name: "Telegram (4.3.4)" }
+  - { id: 747648890, name: "Telegram (4.3.4)" }	
   - { id: 904280696, name: "Things 3 (3.6.2)" }
   - { id: 1091189122, name: "Bear (1.6.1)" }
   - { id: 425424353, name: "The Unarchiver (4.0.0)" }
   - { id: 409201541, name: "Pages (8.0)" }
   - { id: 409203825, name: "Numbers (6.1)" }
+  - { id: 497799835, name: "Xcode" }
+  # - { id: 443987910, name: "1Password (6.8.9)" }
 
 homebrew_installed_packages:
-  - wget
   - htop
-  - rclone
-  - youtube-dl
-  - postgresql
-  - mariadb
-  - mongodb
-  - nodejs
-  - nginx
-  - redis
   - imagemagick
+  - postgresql
+  - redis
+  - wget
+
+  # dev stuff
+  - pyenv
+  - pyenv-virtualenv
+
+  # - mariadb
+  # - mongodb
+  # - nodejs
+  # - nginx
+  # - rclone
+  # - youtube-dl
   # - hugo
   # - gettext # from gnu tool for django mesages
 
 homebrew_cask_apps:
   - calibre
-  - google-chrome
+  - chromium
+  - iina
   - jiggler
   - skype
-  - sublime-text
-  - tunnelblick
-  - transmission
-  - vmware-fusion
-  - whatsapp
-  - vlc
+  - textmate
   - tower
-  - iterm2
-  - macvim
-  - cyberduck
+  - transmission
+  - tunnelblick
+  - whatsapp
+
+  # dev
+  - pycharm
+  - webstorm
+  - goland
+
   # - burp-suite
-  # - iina
-  # - pycharm
+  # - cyberduck
   # - freeze
-  # - goland
+  # - google-chrome
+  # - iterm2
+  # - macvim
   # - osxfuse
-  # - send-to-kindle
+  # - sublime-text
+  # - vlc
+  # - vmware-fusion
 
 composer_packages: []
 gem_packages: []
