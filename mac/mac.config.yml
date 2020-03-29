@@ -18,6 +18,7 @@ homebrew_installed_packages:
   # dev stuff
   - pyenv
   - pyenv-virtualenv
+  - jupyterlab
 
   # - mariadb
   # - mongodb
@@ -31,30 +32,37 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - calibre
   - chromium
+  - cryptomator
+  - freeze
   - iina
   - jiggler
   - skype
+  - soulver
+  - tableplus
   - textmate
   - tower
   - transmission
   - tunnelblick
   - whatsapp
+  - vlc
+  - vmware-fusion
+  - virtualbox
+  - virtualbox-extension-pack
 
   # dev
   - pycharm
   - webstorm
   - goland
+  - docker
 
   # - burp-suite
   # - cyberduck
-  # - freeze
   # - google-chrome
   # - iterm2
   # - macvim
   # - osxfuse
   # - sublime-text
-  # - vlc
-  # - vmware-fusion
+  
 
 composer_packages: []
 gem_packages: []
