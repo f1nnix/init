@@ -6,7 +6,7 @@ mas_installed_apps:
   - { id: 409201541, name: "Pages (8.0)" }
   - { id: 409203825, name: "Numbers (6.1)" }
   - { id: 497799835, name: "Xcode" }
-  # - { id: 443987910, name: "1Password (6.8.9)" }
+  - { id: 1039633667, name: "Irvue" }
 
 homebrew_installed_packages:
   - htop
@@ -30,11 +30,11 @@ homebrew_installed_packages:
   # - gettext # from gnu tool for django mesages
 
 homebrew_cask_apps:
-  - calibre
   - chromium
   - cryptomator
   - freeze
   - iina
+  # - iterm2
   - jiggler
   - skype
   - soulver
@@ -46,8 +46,6 @@ homebrew_cask_apps:
   - whatsapp
   - vlc
   - vmware-fusion
-  - virtualbox
-  - virtualbox-extension-pack
 
   # dev
   - pycharm
@@ -56,12 +54,15 @@ homebrew_cask_apps:
   - docker
 
   # - burp-suite
+  # - calibre
   # - cyberduck
   # - google-chrome
-  # - iterm2
   # - macvim
   # - osxfuse
   # - sublime-text
+  # - virtualbox
+  # - virtualbox-extension-pack 
+
   
 
 composer_packages: []
