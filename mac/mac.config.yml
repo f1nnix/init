@@ -34,7 +34,7 @@ homebrew_cask_apps:
   - cryptomator
   - freeze
   - iina
-  # - iterm2
+  - iterm2
   - jiggler
   - skype
   - soulver
@@ -43,27 +43,25 @@ homebrew_cask_apps:
   - tower
   - transmission
   - tunnelblick
-  - whatsapp
   - vlc
   - vmware-fusion
+  - whatsapp
 
   # dev
   - pycharm
-  - webstorm
-  - goland
-  - docker
+  # - webstorm
+  # - goland
+  # - docker
 
+  - calibre
+  - sublime-text
   # - burp-suite
-  # - calibre
   # - cyberduck
   # - google-chrome
   # - macvim
   # - osxfuse
-  # - sublime-text
   # - virtualbox
   # - virtualbox-extension-pack 
-
-  
 
 composer_packages: []
 gem_packages: []
