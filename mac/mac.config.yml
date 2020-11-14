@@ -6,7 +6,7 @@ mas_installed_apps:
   - { id: 409201541, name: "Pages (8.0)" }
   - { id: 409203825, name: "Numbers (6.1)" }
   - { id: 497799835, name: "Xcode" }
-  - { id: 1039633667, name: "Irvue" }
+  - { id: 937984704, name: "Amphetamine (5.0.3)" }
 
 homebrew_installed_packages:
   - htop
@@ -30,16 +30,15 @@ homebrew_installed_packages:
   # - gettext # from gnu tool for django mesages
 
 homebrew_cask_apps:
-  - chromium
+  - alfred
+  - google-chrome
   - cryptomator
   - freeze
   - iina
   - iterm2
-  - jiggler
   - skype
   - soulver
   - tableplus
-  - textmate
   - tower
   - transmission
   - tunnelblick
